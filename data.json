@@ -1,0 +1,111 @@
+{
+    "data": [
+        {
+            "id": "chromium",
+            "name": "Chromium",
+            "icon": "/icons/chromium.png",
+            "description": "",
+            "category": "app",
+
+            "states": {
+                "not_installed": {
+                    "default": true,
+                    "actions": [
+                        {
+                            "id": "install",
+                            "text": "Install",
+                            "running": "Installing...",
+                            "script": "/scripts/chromium/install.sh",
+                            "on_finish": "installed"
+                        }
+                    ]
+                },
+
+                "installed": {
+                    "default": false,
+                    "actions": [
+                        {
+                            "id": "launch",
+                            "text": "Launch",
+                            "running": "Launching...",
+                            "script": "/scripts/chromium/launch.sh",
+                            "on_finish": "installed"
+                        },
+                        {
+                            "id": "uninstall",
+                            "text": "Uninstall",
+                            "running": "Uninstalling...",
+                            "script": "/scripts/chromium/uninstall.sh",
+                            "on_finish": "not_installed"
+                        }
+                    ]
+                }
+            }
+        },
+
+        {
+            "id": "firefox",
+            "name": "Firefox",
+            "icon": "/icons/firefox.png",
+            "description": "",
+            "category": "app",
+
+            "states": {
+                "not_installed": {
+                    "default": true,
+                    "actions": [
+                        {
+                            "id": "install",
+                            "text": "Install",
+                            "running": "Installing...",
+                            "script": "/scripts/firefox/install.sh",
+                            "on_finish": "installed"
+                        }
+                    ]
+                },
+
+                "installed": {
+                    "default": false,
+                    "actions": [
+                        {
+                            "id": "launch",
+                            "text": "Launch",
+                            "running": "Launching...",
+                            "script": "/scripts/firefox/launch.sh",
+                            "on_finish": "installed"
+                        },
+                        {
+                            "id": "uninstall",
+                            "text": "Uninstall",
+                            "running": "Uninstalling...",
+                            "script": "/scripts/firefox/uninstall.sh",
+                            "on_finish": "not_installed"
+                        }
+                    ]
+                }
+            }
+        },
+
+        {
+            "id": "screen_time",
+            "name": "Patch",
+            "icon": "/icons/patch.png",
+            "description": "",
+            "category": "tool",
+            "states": {
+                "available": {
+                    "default": true,
+                    "actions": [
+                        {
+                            "id": "run",
+                            "text": "Patch",
+                            "running": "Working...",
+                            "script": "/scripts/tools/screen_time.sh",
+                            "on_finish": "available"
+                        }
+                    ]
+                }
+            }
+        }
+    ]
+}
