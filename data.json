@@ -98,9 +98,9 @@
                     "actions": [
                         {
                             "id": "run",
-                            "text": "Patch",
-                            "running": "Working...",
-                            "script": "/scripts/tools/screen_time.sh",
+                            "text": "Install",
+                            "running": "Installing...",
+                            "script": "/scripts/homebrew/install.sh",
                             "on_finish": "available"
                         }
                     ]
