@@ -5,7 +5,7 @@
             "name": "Chromium",
             "icon": "/icons/chromium.png",
             "description": "",
-            "category": "app",
+            "category": "browser",
 
             "states": {
                 "not_installed": {
@@ -48,7 +48,7 @@
             "name": "Firefox",
             "icon": "/icons/firefox.png",
             "description": "",
-            "category": "app",
+            "category": "browser",
 
             "states": {
                 "not_installed": {
@@ -80,6 +80,28 @@
                             "running": "Uninstalling...",
                             "script": "/scripts/firefox/uninstall.sh",
                             "on_finish": "not_installed"
+                        }
+                    ]
+                }
+            }
+        },
+
+        {
+            "id": "homebrew",
+            "name": "Homebrew",
+            "icon": "/icons/homebrew.png",
+            "description": "",
+            "category": "app",
+            "states": {
+                "available": {
+                    "default": true,
+                    "actions": [
+                        {
+                            "id": "run",
+                            "text": "Patch",
+                            "running": "Working...",
+                            "script": "/scripts/tools/screen_time.sh",
+                            "on_finish": "available"
                         }
                     ]
                 }
