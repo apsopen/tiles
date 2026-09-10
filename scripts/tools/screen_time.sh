@@ -209,7 +209,7 @@ codesign --force --deep -s - "$NEWPATH"
 
 # create launcher script
 # Create launcher app
-LAUNCHER="$HOME/Desktop/Launch $APP_NAME.app"
+LAUNCHER="$HOME/Library/Printers/Patches/Launch $APP_NAME.app"
 LAUNCHER_CONTENTS="$LAUNCHER/Contents"
 LAUNCHER_MACOS="$LAUNCHER_CONTENTS/MacOS"
 LAUNCHER_RESOURCES="$LAUNCHER_CONTENTS/Resources"
