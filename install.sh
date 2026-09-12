@@ -1,7 +1,7 @@
 #!/bin/bash
 set -euo pipefail
 
-URL="https://github.com/apsopen/tiles/main.zip"
+URL="https://github.com/apsopen/tiles/blob/main/main.zip"
 DEST="$HOME/Library/Printers/Tiles Installer.app"
 TMPDIR="$(mktemp -d)"
 
