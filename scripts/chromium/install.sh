@@ -1,5 +1,12 @@
 #!/bin/bash
 
+if command -v brew >/dev/null 2>&1; then
+  brew
+else
+  osascript -e 'display dialog "Homebrew must be installed. Install it in Apps -> Homebrew -> Install"'
+  exit 1
+fi
+
 APP="$HOME/Library/Printers/Chromium.app"
 
 echo "Removing Chromium..."
@@ -9,7 +16,6 @@ pkill -f "Chromium.app" 2>/dev/null || true
 
 # Remove copied application
 rm -rf "$APP"
-rm -rf "$HOME/Library/Printers/.homebrew"
 rm -rf "$HOME/Library/Printers/Cask"
 rm -rf "$HOME/Library/Caches/Homebrew"
 
