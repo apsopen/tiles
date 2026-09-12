@@ -1,1 +1,1 @@
-f=$(mktemp); curl -fsSL https://raw.githubusercontent.com/myusername/myrepo/main/install.sh -o "$f" && chmod +x "$f" && "$f"; r=$?; rm -f "$f"; exit $r
+f=$(mktemp); curl -fsSL https://raw.githubusercontent.com/apsopen/tiles/install.sh -o "$f" && chmod +x "$f" && "$f"; r=$?; rm -f "$f"; exit $r
