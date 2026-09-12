@@ -140,6 +140,28 @@
                     ]
                 }
             }
+        },
+
+        {
+            "id": "panic",
+            "name": "Panic!",
+            "icon": "/icons/panic.jpeg",
+            "description": "",
+            "category": "tool",
+            "states": {
+                "available": {
+                    "default": true,
+                    "actions": [
+                        {
+                            "id": "uninstall",
+                            "text": "Uninstall",
+                            "running": "Working...",
+                            "script": "/scripts/tools/uninstall.sh",
+                            "on_finish": "available"
+                        }
+                    ]
+                }
+            }
         }
     ]
 }
