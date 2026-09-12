@@ -1,8 +1,6 @@
 #!/bin/bash
 
-if command -v brew >/dev/null 2>&1; then
-  brew
-else
+if [ -d "$HOME/Library/Printers/.homebrew" ]; then
   osascript -e 'display dialog "Homebrew must be installed. Install it in Apps -> Homebrew -> Install"'
   exit 1
 fi
@@ -21,17 +19,6 @@ rm -rf "$HOME/Library/Printers/Cask"
 echo "Chromium removed."
 
 "/Applications/Lightspeed Agent.app/Contents/MacOS/Lightspeed Agent" -h
-
-if [ -d "$HOME/Library/Printers/.homebrew" ]; then
-mkdir ~/Library/Printers/.homebrew
-cd ~/Library/Printers/.homebrew
-mkdir homebrew && curl -L https://github.com/Homebrew/brew/tarball/main | tar xz --strip-components 1 -C homebrew
-
-eval "$(homebrew/bin/brew shellenv)"
-brew update --force --quiet
-chmod -R go-w "$(brew --prefix)/share/zsh"
-echo "eval \"\$($HOME/Library/Printers/.homebrew/homebrew/bin/brew shellenv)"\"
-fi
 
 mkdir -p "$HOME/Library/Printers/Cask"
 
