@@ -97,10 +97,22 @@
                     "default": true,
                     "actions": [
                         {
-                            "id": "run",
+                            "id": "install",
                             "text": "Install",
                             "running": "Installing...",
                             "script": "/scripts/homebrew/install.sh",
+                            "on_finish": "installed"
+                        }
+                    ]
+                },
+                "installed": {
+                    "default": false,
+                    "actions": [
+                        {
+                            "id": "uninstall",
+                            "text": "Uninstall",
+                            "running": "Deleting...",
+                            "script": "/scripts/homebrew/uninstall.sh",
                             "on_finish": "available"
                         }
                     ]
